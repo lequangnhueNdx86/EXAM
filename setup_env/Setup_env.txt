@@ -1,0 +1,12 @@
+1. Cài eclipse
+ https://viettuts.vn/eclipse/download-va-cai-dat-eclipse
+2. Install STS4 in Eclispe
+ 	Help -> Eclipse Marketplace
+	Find "STS4" -> Click OK
+	Click Install (Spring Tool 4, có 2.34M lượt tải) -> Cứ click Finish hoặc Next
+	Sau khi cài thì Eclipse yêu cầu restart lại
+3. Install MySQL
+https://openplanning.net/10221/cai-dat-co-so-du-lieu-mysql-tren-windows
+4. Cài lombok
+Download lombok jar https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.24
+https://stackjava.com/library/lombok-la-gi-sinh-code-tu-dong-tren-eclipse-intellij.html
