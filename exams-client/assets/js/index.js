@@ -1,3 +1,4 @@
+alert("Welcome!")
 $.ajax({
     type: "GET",
     url: `${BASE_URL}/api/home`,

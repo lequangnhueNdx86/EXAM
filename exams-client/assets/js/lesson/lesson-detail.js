@@ -126,7 +126,7 @@ $("#add-matrix").click(() => {
       levelList.forEach((level) => {
         html += `<tr>
       <th scope="row">${level.name}</th>
-      <td><input type="number" class="form-control w-25" id="level-${level.id}" name="quantity"></td>
+      <td><input type="number" class="form-control w-50" id="level-${level.id}" name="quantity"></td>
     </tr>`;
       });
       $("#matrix-add-modal-body").html(html);

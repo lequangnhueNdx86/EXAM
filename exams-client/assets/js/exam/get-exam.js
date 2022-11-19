@@ -4,7 +4,6 @@ $("#start-btn").click(() => {
     type: "GET",
     url: BASE_URL + "/api/exams/lessons",
     headers: {
-      Authorization: "Bearer " + TOKEN,
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
@@ -16,13 +15,11 @@ $("#start-btn").click(() => {
       });
       $("select[name='lesson']").html(html);
     },
-    error: function (response) {
-      if (response.status == 403) {
-        backLogin();
-      }
-    },
+    error: function (response) {},
   });
 });
+
+var examRequest = {};
 
 $("#get-exam-form").validate({
   rules: {
@@ -55,8 +52,14 @@ $("#get-exam-form").validate({
   },
 
   submitHandler: () => {
-    $("#exam-btn").click();
-    let examRequest = {
+    $("#confirm-btn").click();
+    $("#close-btn").click(() => {
+      $("#open-add-btn").click();
+    })
+    
+    $("#go-exam-btn").click(() => {
+      $("#exam-btn").click();
+      examRequest = {
       studentCode: $("input[name='studentCode']").val(),
       studentName: $("input[name='studentName']").val(),
       lesson: parseInt($("select[name='lesson']").val()),
@@ -77,8 +80,19 @@ $("#get-exam-form").validate({
       },
       error: function (response) {},
     });
+    });
+    
   },
 });
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if (new Date().getTime() - start > milliseconds) {
+      break;
+    }
+  }
+}
 
 function clearInput() {
   $("input[name='studentCode']").val("");
@@ -152,11 +166,11 @@ function submitExam() {
   let listAnswer = [];
   listAnswerDiv.forEach((item) => {
     let questionId = parseInt($(item).find("input").attr("id"));
-    let answer = '';
+    let answer = "";
     if ($(item).find("input[type='radio']:checked").length) {
       answer = $(item).find("input[type='radio']:checked").val();
-    } else if ($(item).find("input[type='text']").length){
-      answer = $(item).find("input[type='text']").val()
+    } else if ($(item).find("input[type='text']").length) {
+      answer = $(item).find("input[type='text']").val();
     }
     console.log(answer);
     listAnswer.push({

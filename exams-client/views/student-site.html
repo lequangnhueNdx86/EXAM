@@ -40,13 +40,12 @@
     <!-- Template Main CSS File -->
     <link href="/assets/css/style.css" rel="stylesheet" />
     <style>
-        label.error {
-            color: red;
-            margin: 0;
-            text-transform: inherit;
-        }
+      label.error {
+        color: red;
+        margin: 0;
+        text-transform: inherit;
+      }
     </style>
-
   </head>
 
   <body>
@@ -68,6 +67,13 @@
         </section>
       </div>
 
+      <button
+      type="button"
+      class="btn btn-primary visually-hidden"
+      data-bs-toggle="modal"
+      data-bs-target="#register-modal"
+      id="open-add-btn"
+    ></button>
       <!--  add Modal -->
       <div class="modal fade" id="register-modal" tabindex="-1">
         <form class="modal-dialog modal-dialog-centered" id="get-exam-form">
@@ -81,7 +87,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body" style="margin-bottom: 50px" >
+            <div class="modal-body" style="margin-bottom: 50px">
               <div class="row mb-3">
                 <div class="col-sm-4">
                   <label for="inputText" class="col-form-label"
@@ -124,11 +130,7 @@
               >
                 Close
               </button>
-              <button
-                type="submit"
-                class="btn btn-primary"
-                id="get-exam-btn"
-              >
+              <button type="submit" class="btn btn-primary" id="get-exam-btn">
                 Start
               </button>
             </div>
@@ -137,12 +139,12 @@
       </div>
 
       <button
-      type="button"
-      class="btn btn-primary visually-hidden"
-      data-bs-toggle="modal"
-      data-bs-target="#exam-modal"
-      id="exam-btn"
-    ></button>
+        type="button"
+        class="btn btn-primary visually-hidden"
+        data-bs-toggle="modal"
+        data-bs-target="#exam-modal"
+        id="exam-btn"
+      ></button>
 
       <!-- exam modal -->
       <div class="modal fade" id="exam-modal" tabindex="-1">
@@ -151,7 +153,8 @@
             <div class="modal-header">
               <h5 class="modal-title">
                 #<span id="examId"></span>&nbsp; &nbsp;<span id="lesson"></span>
-              </h5> &nbsp; &nbsp;
+              </h5>
+              &nbsp; &nbsp;
               <h6 class="bold"><span id="time"></span></h6>
               <button
                 type="button"
@@ -224,6 +227,54 @@
               </button>
             </div>
           </div>
+        </div>
+      </div>
+
+      <button
+      type="button"
+      class="btn btn-primary visually-hidden"
+      data-bs-toggle="modal"
+      data-bs-target="#confirm-modal"
+      id="confirm-btn"
+    ></button>
+      <!--  dialog modal -->
+      <div class="modal fade" id="confirm-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"></h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body text-center" style="margin-bottom: 50px">Test started</div>
+            <div class="modal-footer">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-8 text-center">
+                <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                id="close-btn"
+              >
+                Close
+              </button>
+              <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="go-exam-btn"
+                  data-bs-dismiss="modal"
+
+                >
+                  Go
+                </button>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </main>

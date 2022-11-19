@@ -165,7 +165,7 @@ public class LessonService {
 	}
 	
 	public ListLessonGenerateResponse getAllLessonForGenerateExam() {
-		List<Lesson> lessons = lessonRepository.findAll();
+		List<Lesson> lessons = lessonRepository.findByRemovedFalse();
 		List<LessonGenerateResponse> list = new ArrayList<>();
 		lessons.forEach(lesson -> {
 			list.add(mapper.map(lesson, LessonGenerateResponse.class));

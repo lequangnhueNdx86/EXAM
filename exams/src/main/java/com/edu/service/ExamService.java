@@ -111,7 +111,7 @@ public class ExamService {
 
 	public ExamResultResponse handleExam(ExamSubmitRequest examSubmitRequest) {
 		Exam exam = examRepository.findById(examSubmitRequest.getExamId()).get();
-		long timeout = 3000; // ms
+		long timeout = 5000; // ms
 
 		Timestamp submitTime = new Timestamp(new Date().getTime());
 		// if submit time in allowed time
